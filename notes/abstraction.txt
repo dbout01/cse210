@@ -1,0 +1,79 @@
+ABSTRACTION
+        - The process of turning complex ideas into simple ones
+            ex: 3000 lines of C code to Python to: print("hello world")
+            ex 2: Abstraction simplifies complex programs by hiding unnecessary details and emphasizing essential parts.
+            It improves code readability and maintainability by allowing developers to focus on the design and functionality
+            rather than getting caught-up in the technical details. For example, in a shape modeling program (making 3d shapes),
+            an abstract class 'Shape' can define methods like 'area,' helping shapes like circles and squares to implement these methods
+            without worrying about the small details. It boosts efficiency and supports code reuse.
+
+
+
+CLASS
+    - A new custom data type that defines attributes (member variables) and methods.
+        This is like a blueprint to create instances or objects of that class. Example: A Person has given name and family name.
+    Class Diagram
+        - A box that has the name of the class at the top, the member variables or attributes in the middle, and the methods at the bottom.
+            Member variables are followed by a colon and their data type, and methods are followed by a colon and their return type. 
+
+Instance = variable
+Method = function
+
+OBJECT
+    - A conceptual model (template) for a category of things, real or imagined, that has a specific responsibility within our program.
+        example: we might think of an object that holds and provides identifying information about a person.
+    - Objects have state and behavior that allow them fulfill their responsibility
+    -"instace of a class"
+
+
+
+EXAMPLE OF CLASSES & OBJECTS:
+    // A code template for the category of things known as Person. The
+    // responsibility of a Person is to hold and display personal information.
+    public class Person
+    {
+        // The C# convention is to start member variables with an underscore _
+        public string _givenName = "";
+        public string _familyName = "";
+
+        // A special method, called a constructor that is invoked using the  
+        // new keyword followed by the class name and parentheses.
+        public Person()
+        {
+        }
+
+        // A method that displays the person's full name as used in eastern 
+        // countries or <family name, given name>.
+        public void ShowEasternName()
+        {
+            Console.WriteLine($"{_familyName}, {_givenName}");
+        }
+
+        // A method that displays the person's full name as used in western 
+        // countries or <given name family name>.
+        public void ShowWesternName()
+        {
+            Console.WriteLine($"{_givenName} {_familyName}");
+        }
+    }
+
+CLASS DIAGRAM OUTLINE
+Class: Person
+Attributes:
+* _givenName : string
+* _familyName : string
+
+Behaviors:
+* ShowEasternName() : void
+* ShowWesternName() : void
+
+                        Output:
+                               Joseph Smith
+                               Smith, Joseph
+
+
+CUSTOM DATA TYPES FOR CLASSES
+
+    int height;
+        height = 17;
+    string color;

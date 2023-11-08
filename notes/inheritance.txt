@@ -1,0 +1,28 @@
+INHERITANCE
+     - Inheritance allows one class to inherit the properties and methods of another class.
+     - Code reuse
+        example:
+
+            // a regular class called Person
+            public class Person // Person = "Parent Class", "Based", "Derived"
+            {
+                public string GetName()
+                {
+                    return "Joseph";
+                }
+            }
+
+            // a class that inherits from Person
+            public class Student : Person // Student = "Child Class", "Super", "Sub"
+            {
+                public string GetNumber()
+                {
+                    return "0123456789";
+                }
+            }
+        
+        - 'Student' class is a specific type of person & inherits all attributes & methods from 'Person'
+        - The syntax for specifying an inheritance relationship is found in the declaration of the child class
+        - When defining the name of the class, you use a colon followed by the name of the parent class (shown on line 15)
+        - You can use the 'base' keyword to call methods from a parent class in a child Class
+        - Limit inheritance levels to the average number of items to 3-4

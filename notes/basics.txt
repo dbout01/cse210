@@ -1,0 +1,356 @@
+DEFINED TYPES
+    - Once a variable's type is defined, it cannot be changed later.
+    - You declare a variable, by specifying the type.
+    - Later, when you use the variable, you do not need to specify the type again.
+    
+    Common built-in variable types are:
+        - int - Integers (whole numbers, positive and negative)
+        - string - Strings (a sequence of characters, including letters, numbers, or symbols)
+        - float - Floating point numbers (numbers that use decimals)
+        - double - Double precision floating point numbers (just like a float, except it takes up twice as much - - memory, so it can hold larger numbers or numbers with more decimal places)
+        - bool - Boolean variables (true or false)
+
+INPUT & OUTPUT
+    - To print, or write something as output to the console, you use the Console.WriteLine("") function.
+        ex: Console.WriteLine("Hello World!");
+    - Console.WriteLine("") will print, or write, a full line, including the new line.
+    - If you do not want a new line at the end, you can use Console.Write("") to display the text with no newline afterward.
+    - To get input from the user in C#, use the Console.ReadLine() function, which will return a string that comes from whatever the user typed. Please note that it is a string (not an integer or floating point number), and that you need to use Console.ReadLine() not Console.Read().
+        - Also, please be aware that, unlike input in Python, you do not provide the text of the prompt to the Console.ReadLine() function in C#, so you must display it first with Console.Write("").
+            ex: Console.Write("What is your favorite color? ");
+                string color = Console.ReadLine();
+
+CURLY BRACES DEFINE BLOCKS
+    - Curly braces {} define the body of an if statement or a function. In Python, the body is defined by indenting. In C#, you still indent the body, but this is only a convention, the actual mechanism to define the body is the curly braces {}.
+    - Also, in C#, you do not use a colon : to start the body, and when using if statements, you must always put the condition in parentheses.
+        ex:     if (x > y)
+                {
+                    Console.WriteLine("greater");
+                }
+
+STATEMENTS END IN SEMICOLONS
+    - Statements end with the semicolon ; character. Typically one statement will be one line, however, sometimes you may have a long statement that extends on multiple lines until the semicolon ; is reached.
+    - The rule to end statements with semicolons applies to statements such as calling a function, declaring a variable, setting a variable, and so forth. You do not put a semicolon between the condition of an if statement and its body, or the name of a function and its body.
+
+STRING INTERPOLATION
+    - In C#, if you would like to use a variable inside a string, you start the string with a dollar sign $ in the same way that in Python, you start a format string with an f.
+        ex:        string school = "BYU-Idaho";
+                   Console.WriteLine($"I am studying at {school}.");
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+OPERATORS
+    - Used to assign values, compare values, perform arithmetic operations, and more.
+    - There are different types of JavaScript operators:
+        - Arithmetic Operators
+        - Assignment Operators
+        - Comparison Operators
+        - Logical Operators
+        - Conditional Operators
+        - Type Operators
+
+
+
+ARITHMETIC OPERATORS
+    - Used to perform arithmetic between variables and/or values
+            + 	Addition 	              x = y + 2 	   y=5, x=7
+            - 	Subtraction 	          x=y-2 	       y=5, x=3
+            * 	Multiplication 	          x=y*2 	       y=5, x=10
+            ** 	Exponentiation (ES2016)   x=y**2 	       y=5, x=25
+            / 	Division 	              x = y / 2 	   y=5, x=2.5
+            % 	Remainder 	              x = y % 2 	   y=5, x=1
+            ++ 	Pre increment 	          x = ++y 	       y=6, x=6
+            ++ 	Post increment 	          x = y++ 	       y=6, x=5
+            -- 	Pre decrement 	          x = --y 	       y=4, x=4
+            -- 	Post decrement 	          x = y-- 	       y=4, x=5
+
+
+
+ASSIGNMENT OPERATORS
+    - Used to assign values to JavaScript variables
+            = 	x = y 	x = y 	x = 5
+            += 	x += y 	x = x + y 	x = 15
+            -= 	x -= y 	x = x - y 	x = 5
+            *= 	x *= y 	x = x * y 	x = 50
+            /= 	x /= y 	x = x / y 	x = 2
+            %= 	x %= y 	x = x % y 	x = 0
+            : 	x: 45 	size.x = 45 	x = 45
+
+
+
+STRING OPERATORS
+    - The + operator, and the += operator can also be used to concatenate (add) strings
+           + 	t3 = t1 + t2 	"Good " 	      "Morning" 	 "Good Morning"
+           += 	t1 += t2 	    "Good Morning" 	  "Morning"
+
+
+
+COMPARISON OPERATORS
+    - Used in logical statements to determine equality or difference between variables or values
+           == 	  equal to 	                    x == 5 	          true
+           === 	  equal value and type 	        x === "5" 	      false
+           === 	  equal value and type 	        x === 5 	      true
+           != 	  not equal 	                x != 8 	          true
+           !== 	  not equal value or type 	    x !== "5" 	      true
+           !== 	  not equal value or type 	    x !== 5 	      false
+           > 	  greater than 	                x > 8 	          false
+           < 	  less than 	                x < 8 	          true
+           >= 	  greater or equal to 	        x >= 8 	          false
+           <= 	  less or equal to 	            x <= 8 	          true
+
+        COERCION
+            - The process Javascript uses when it has to do a comparison or arithmetic operation
+            between two values that don't match. It is important to understand that it happens...
+            and that JS has a few guidelines it follows as it is doing it.
+            - Javascript prefers numeric comparisons and will coerce to a primitive numeric value if it can
+            In the case of '+' (addition or concatination). If there is a string involved...
+            all values will be converted to strings. That's the only way JS knows to combine mixed values.
+            - Why coercion? Javascript needs the ability to coerce values because it is weakly typed
+    - Use the strict equality (triple equals (===)) for your comparisons*
+        MANUAL COERCION
+            - Sometimes we know that the data is in the wrong format, and need to change it to the correct type
+                ex:
+                    <!-- HTML -->
+                    <label for="age">Enter your Age</label>
+                    <input id="age" />
+
+                    // get age from input
+                    const age = document.getElementById("age").value; // assume 21 was entered
+                    // add 10 years
+                    const agePlus10 = age + 10;
+                    console.log(agePlus10); // would give something like 2110 (21 + 10)
+                fix:
+                    // get age from input
+                    const age = document.getElementById("age").value; // assume 21 was entered
+                    // add 10 years
+                    const agePlus10 = parseInt(age) + 10;
+                    console.log(agePlus10); // success! 31
+
+                    There is also a parseFloat() function for decimal point conversion.
+
+
+
+CONDITIONAL (TERNARY) OPERATORS
+    - Assigns a value to a variable based on a condition.
+          (condition) ? x : y 	(z < 18) ? x : y
+    CONDITIONALS & BRANCHING
+    - Boolean operators are used
+    - "IF"
+        - if, else if, else
+        - boolean expressions have parenthesis around them, and the JavaScript scope operators
+          are used to indicate what lines of code executes in each condition
+            - ex:
+                if (numSales <= 50) {
+    - "SWITCH"
+        - Helpful if you have large numbers of cases to check
+        - Alternative to if, else if, else. Useful when you have a known set of values that you need to check
+        - Once the switch finds a match, it will continue evaluating the cases that follow until it sees a break
+        - ex:
+                function gpaPoints(grade) {
+                let gpaPoints = 0;
+                switch (grade) {
+                    case "A":
+                    gpaPoints = 4;
+                    // break removed
+                    case "B":
+                    gpaPoints = 3;
+                    break;
+                    case "C":
+                    gpaPoints = 2;
+                    default:
+                    gpaPoints = -1;
+                }
+                return gpaPoints;
+                }
+
+                gpaPoints("A"); // returns 3!
+                gpaPoints("B"); // also returns 3
+                gpaPoints("C"); // returns -1!
+                gpaPoints("X"); // returns -1
+
+
+
+LOGICAL OPERATORS
+    - Used to determine the logic between variables or values
+          && 	AND 	  (x < 10 && y > 1) is true 	
+          || 	OR 	      (x === 5 || y === 5) is false 	
+          ! 	NOT 	  !(x === y) is true
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+LOOPS
+    - while
+        - Works the same way as Python
+        - Uses {} to define the body of a loop
+        - Condition must be surrounded by ()
+        - ex:
+                string response = "yes";
+
+                while (response == "yes")
+                {
+                    Console.Write("Do you want to continue? ");
+                    response = Console.ReadLine();
+                }
+
+    - do-while
+        - Works the same as a while loop
+            - Exception: the body of the loops runs once fat, before
+                the check is made for the first time.
+        - Syntax: "do", followed by body, "while", expression & ;
+        - ex:             
+                string response;
+
+                do
+                {
+                    Console.Write("Do you want to continue? ");
+                    response = Console.ReadLine();
+                } while (response == "yes");
+
+    - for
+        - "for x in range"
+        - 3 parts separated by semi-colons
+            part 1: intializes the value
+            part 2: condition to check
+            part 3: increment step that is run at end of each loop
+        - ex:     
+                for (int i = 0; i < 10; i++)
+                {
+                    Console.WriteLine(i);
+                }
+        - "++" operator increments the value in the variable by 1
+
+    - foreach
+        - Similar to standard loop in Python
+        - iterator varaible must have its type defined
+        - ex:
+                foreach (string color in colors)
+                {
+                Console.WriteLine(color);
+                }
+
+    - Random #s
+        - Get a random # by using a Random class, then using it to get the
+            next integer in a particular range
+        - ex:
+                Random randomGenerator = new Random();
+                int number = randomGenerator.Next(1, 11);
+
+
+
+
+
+COLLECTIONS
+    Lists
+        - a major difference between C# and Python is that you must declare your variable types in C#
+        - when you declare a new list variable in C#, you not only declare that it is a List,
+            you must also declare the type of data that can be put in the list
+        - To create a new list of integers, you specify int inside angle brackets <> directly following
+            the name of the data structure: List<int> and if you want to have a list of strings, you would use: List<string>
+        - ex:
+                List<int> numbers = new List<int>();
+                List<string> words = new List<string>();
+                - use extra () anytime we create a new object
+                - Any file that uses Lists (or any other standard collection), must refer to that library at the top of the file.
+        -* Use "new" before starting a list
+
+        Adding items to Lists
+            - "add" instead of "append"
+            - ex:
+                    using System.Collections.Generic;
+                    ...
+                    List<string> words = new List<string>();
+                    words.Add("phone");
+                    words.Add("keyboard");
+                    words.Add("mouse");
+
+        Getting list size
+            - "Count"
+            - ex: Console.WriteLine(words.Count); (no () after Count because its a property, not a function)
+        
+        Iterating through a List
+            - use "foreach" loop
+            -ex: 
+                    foreach (string word in words)
+                    {
+                        Console.WriteLine(word);
+                    }
+            - can also access items by their index
+                    for (int i = 0; i < words.Count; i++)
+                    {
+                    Console.WriteLine(words[i]);
+                    }
+
+
+
+
+
+FUNCTIONS
+    - One key difference in C#: in the same way that each variable must define a type,
+        each function must define its return type, for example, whether it will return an int, a string,
+        or nothing (the return type for nothing is void).
+        - Each parameter must have a data type as well.
+    - General structure of a function definition in C#:
+        returnType FunctionName(dataType parameter1, dataType parameter2)
+        {
+        // function_body
+        }
+    - No parameters or a return type
+        void DisplayMessage()
+        {
+        Console.WriteLine("Hello world!");
+        }
+    - accepting a single string parameter
+        void DisplayPersonalMessage(string userName)
+        {
+        Console.WriteLine($"Hello {userName}");
+        }
+    - Accepts two integers as parameters, adds them together, & returns result
+        int AddNumbers(int first, int second)
+        {
+        int sum = first + second;
+        return sum;
+        }
+
+    Functions vs Methods
+        - Methods: must be called in the context of an object
+        - If you want to define "regular" standalone function, you need to use the 'static' keyboard:
+                static void DisplayMessage()
+                {
+                Console.WriteLine("Hello world!");
+                }
+
+                static void DisplayPersonalMessage(string userName)
+                {
+                Console.WriteLine($"Hello {userName}");
+                }
+
+                static int AddNumbers(int first, int second)
+                {
+                int sum = first + second;
+                return sum;
+                }
+        - *Use static for all of your functions until we start writing classes.
+
+    Variable Scope
+        - variables declared and used in the body of a function
+            can only be accessed within that function
+    
+    *int = when adding something

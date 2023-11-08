@@ -1,0 +1,55 @@
+Class: Journal
+    Attributes:
+        entries: A list that stores objects of the Entry class. This attribute keeps track of the entries in the journal
+    Behaviors:
+        add_entry(entry: Entry): A method that adds a new entry (object of the Entry class) to the entries list.
+        remove_entry(entry: Entry): A method that removes a specified entry (object of the Entry class) from the entries list
+        save_to_file(filename: str): A method that saves the journal entries to a file specified by the filename parameter
+        load_from_file(filename: str): A method that loads journal entries from a file specified by the filename parameter
+
+
+Class: PromptGenerator
+    Attributes:
+        prompts: A list that stores generated prompts as strings. This attribute allows the class to keep track of the prompts it has generated
+    Behaviors:
+        generate_prompt() -> str: A method that generates and returns a prompt as a string. This method is responsible for generating prompts based on some logic and adding them to the prompts list
+
+
+Class: Entry
+    Attributes:
+        date: An attribute of type Date representing the date of the entry
+        content: A string attribute representing the content of the entry
+    Behaviors:
+        edit_content(new_content: str): A method that allows editing the content of the entry. It takes a new content string as a parameter and updates the content attribute
+        get_date() -> Date: A method that retrieves and returns the date of the entry
+        get_content() -> str: A method that retrieves and returns the content of the entry as a string
+
+
+
+
+DESCRIPTIONS:
+
+    Saving/Loading
+        - Saving/Loading functionality is defined through the methods save_to_file(filename: str) and load_from_file(filename: str) in the Journal class
+        The save_to_file method saves the journal entries to a specified file, and the load_from_file method loads journal entries from a specified file
+        These methods enable the journal entries to be persisted and retrieved as needed
+
+
+PromptGenerator
+        - Prompt generation is defined for this assignment through the PromptGenerator class
+          The PromptGenerator class contains the method generate_prompt() -> str, which generates and returns prompts as strings
+        The generated prompts are stored in the prompts list attribute of the class
+
+
+Interaction
+    Journal and Entry Interaction:
+        The Journal class contains a list of Entry objects, allowing for the addition and removal of entries through the add_entry(entry: Entry) and remove_entry(entry: Entry) methods
+        Entries are represented by the Entry class, which has attributes for date and content, along with methods for editing content (edit_content(new_content: str)) and retrieving date and content (get_date() -> Date, get_content() -> str)
+
+    Journal and Saving/Loading Interaction:
+        The Journal class interacts with the saving/loading functionality through the save_to_file(filename: str) and load_from_file(filename: str) methods
+        These methods allow the journal entries to be saved to and loaded from external files, providing a way to store the journal data
+
+    PromptGenerator Interaction:
+        The PromptGenerator class operates independently by generating prompts through the generate_prompt() -> str method
+        These prompts are stored in the prompts list within the PromptGenerator class

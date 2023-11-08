@@ -1,0 +1,30 @@
+ENCAPSULATION
+    -The act of enclosing something, as if it were in a capsule.
+    It means thinking carefully about the behaviors your classes need and then hiding
+    the details of how they perform those behaviors, even making it so other code cannot
+    see or manipulate these details.
+    - We prevent other parts of the program from accessing private details. A class should completely encapsulate, or contain,
+    all of the data and logic surrounding the task. If other parts of the program need to perform the task or something related to it,
+    they should not try to access the data directly. Instead, they should communicate with the class in question, and it can access the
+    data as necessary. If the class has well-designed methods, other parts of the program shouldn't need direct access to the internal data,
+    they can rely on the methods provided.
+
+    - A major component encapsulation in programming involves information hiding or controlling access to internal data.
+
+    Why Encapsulation Matters
+        Critical for two main reasons:
+        - If something is broken, any code that has access might be to blame.
+        - If something needs to change, any code that has access might need to change.
+
+    Access Modifiers
+        - Special keywords that specify which attributes and methods are public or private
+        - Private = class members that should be kept private or hidden from other parts of the program
+        - Public = class members that should be available for use in other parts of the program
+    
+    Attributes
+        - Should remain private
+    Methods
+        - Should remain public
+
+    Getters & Setters
+        - Accessors & Mutators
