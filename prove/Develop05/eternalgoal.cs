@@ -1,6 +1,6 @@
 public class EternalGoal : Goal
 {
-    // Attribute
+    //Attribute
     private int completionPoints;
 
     //Constructor
@@ -9,11 +9,11 @@ public class EternalGoal : Goal
         this.completionPoints = completionPoints;
     }
 
-    // Overrides Methods
+    //Overrides Methods
     public override int RecordEvent()
     {
-        base.RecordEvent(); // Call base class implementation if needed
-        // Additional implementation for recording events specific to EternalGoal
+        base.RecordEvent(); //Call base class implementation if needed
+        //Additional implementation for recording events specific to EternalGoal
         return completionPoints;
     }
 

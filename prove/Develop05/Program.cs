@@ -12,21 +12,21 @@ class Program
         List<Goal> goals = new List<Goal>();
 
         //Goals
-        Goal simpleGoal = new simpleGoal("Run a marathon", "Complete a triathalon", 1000, 2000);
-        Goal eternalGoal = new eternalGoal("Read scriptures", "Read scriptures daily", 100, 500);
-        Goal checklistGoal = new checklistGoal("Go grocery shopping", "go to a movie", 50, 50);
+        Goal simpleGoal = new SimpleGoal("Run a marathon", "Complete a triathalon", 1000, 200);
+        Goal eternalGoal = new EternalGoal("Read scriptures", "Read scriptures daily", 100, 50);
+        Goal checklistGoal = new ChecklistGoal("Go grocery shopping", "go to a movie", 50, 500, 10);
 
         //Adds goals to the list
         goals.Add(simpleGoal);
         goals.Add(eternalGoal);
         goals.Add(checklistGoal);
 
-        // Displays beginning goals
+        //Displays beginning goals
         ui.DisplayGoals(goals);
         ui.DisplayScore(CalculateTotalScore(goals));
 
         //Records events
-        RecordEvent(goals);
+        RecordEvents(goals);
 
         //Displays updated goals and score
         ui.DisplayGoals(goals);
@@ -43,7 +43,7 @@ class Program
 
      static int CalculateTotalScore(List<Goal> goals)
     {
-        // Calculates the total score based on completed goals
+        //Calculates the total score based on completed goals
         int totalScore = 0;
         foreach (var goal in goals)
         {
@@ -57,7 +57,7 @@ class Program
 
      static List<Goal> LoadGoals(string filename)
     {
-        // Loads goals from a text file
+        //Loads goals from a text file
         List<Goal> loadedGoals = new List<Goal>();
         string[] lines = System.IO.File.ReadAllLines(filename);
         foreach (var line in lines)

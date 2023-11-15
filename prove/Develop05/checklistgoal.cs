@@ -1,6 +1,6 @@
 public class CheckListGoal : Goal
 {
-    // Attributes
+    //Attributes
     private int completionPoints;
     private int requiredCount;
     private int currentCount;
