@@ -29,9 +29,4 @@ public class UserInterface
         return Console.ReadLine();
     }
 
-
-
-
-
-
 }
