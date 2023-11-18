@@ -4,29 +4,27 @@ using System.Collections.Generic;
 public class UserInterface
 {
     //Methods
-    public void DisplayScore (int score)
+    public void DisplayScore(int score)
     {
         Console.WriteLine($"Your current score: {score}");
     }
 
     public void DisplayGoals(List<Goal> goals)
     {
-        Console.WriteLine("Your goals: ");
+        Console.WriteLine("Goals: ");
         foreach (var goal in goals)
         {
-            string completionStatus = goal.IsCompleted() ? "[X]" : "[ ]";
-            if (goal is CheckListGoal checklistGoal)
+            Console.WriteLine($"- {goal.GetName()} ({goal.GetDescription()}) [{(goal.IsCompleted() ? "X" : " ")}]");
+            if (goal is ChecklistGoal checklistGoal)
             {
-                completionStatus += $" Completed {checklistGoal.GetCurrentCount()}/{checklistGoal.GetRequiredCount()} times";
+                Console.WriteLine($"  Completed {checklistGoal.GetCurrentCount()}/{checklistGoal.GetRequiredCount()} times");
             }
-                Console.WriteLine($"{completionStatus} {goal.GetName()}: {goal.GetDescription()}");
         }
     }
-
+    
     public string GetUserInput()
     {
-        Console.Write("Etner your choice: ");
+        Console.Write("Enter your choice: ");
         return Console.ReadLine();
     }
-
 }

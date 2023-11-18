@@ -30,15 +30,4 @@ public class CheckListGoal : Goal
         return currentCount >= requiredCount;
     }
 
-
-
-
-
-
-
-
-
-
-
-
 }

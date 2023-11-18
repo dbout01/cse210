@@ -21,7 +21,7 @@ class Program
         goals.Add(eternalGoal);
         goals.Add(checklistGoal);
 
-        //Displays beginning goals
+        //Displays beginning goals & score
         ui.DisplayGoals(goals);
         ui.DisplayScore(CalculateTotalScore(goals));
 
@@ -41,6 +41,16 @@ class Program
         ui.DisplayScore(CalculateTotalScore(goals));
     }
 
+     static void RecordEvents(List<Goal> goals)
+    {
+        // Records events for each goal
+        foreach (var goal in goals)
+        {
+            int pointsEarned = goal.RecordEvent();
+            Console.WriteLine($"Recorded event for {goal.GetName()}. Earned {pointsEarned} points.");
+        }
+    }
+
      static int CalculateTotalScore(List<Goal> goals)
     {
         //Calculates the total score based on completed goals
@@ -53,6 +63,18 @@ class Program
             }
         }
         return totalScore;
+    }
+
+     static void SaveGoals(List<Goal> goals, string filename)
+    {
+        // Saves goals to a text file
+        List<string> lines = new List<string>();
+        foreach (var goal in goals)
+        {
+            lines.Add(goal.GetStringRepresentation());
+        }
+        System.IO.File.WriteAllLines(filename, lines);
+        Console.WriteLine($"Goals saved to {filename}.");
     }
 
      static List<Goal> LoadGoals(string filename)
@@ -68,6 +90,4 @@ class Program
         Console.WriteLine($"Goals loaded from {filename}.");
         return loadedGoals;
     }
-
-    
 }

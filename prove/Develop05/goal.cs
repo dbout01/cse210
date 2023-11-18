@@ -34,8 +34,4 @@ public class Goal
         //(will be overriden in derived classes)
         return completed;
     }
-
-
-
-
     }

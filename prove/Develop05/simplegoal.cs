@@ -17,7 +17,4 @@ public class SimpleGoal : Goal
         //More implementation for recording events specific to SimpleGoal
         return completionPoints;
     }
-
-
-
 }
