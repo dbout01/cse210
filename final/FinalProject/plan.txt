@@ -1,0 +1,10 @@
+FINAL PROJECT PLAN
+
+1. Open-ended project
+2. I plan on developing a C# program centered around the management of a digital wine cellar.
+As C# student, I learned the core principles of programming with classes to create a solution.
+the base class is the 'WineCellarManager,' serving as the focal point helping various classes.
+These include 'Wine' for individual bottle representation, 'WineCellar' for overall collection
+management, 'WineCatalog' for an organized list of options, and 'WineStatistics' for data
+analysis. The 'FileHandler' manages file operations, 'UserInterface' ensures a user-friendly
+experience, and 'ValidationHelper' maintains data integrity.
