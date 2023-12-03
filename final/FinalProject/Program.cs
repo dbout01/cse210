@@ -1,9 +1,8 @@
-using System;
-
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        Console.WriteLine("Hello FinalProject World!");
+        WineCellarManager cellarManager = new WineCellarManager();
+        cellarManager.RunProgram();
     }
 }
