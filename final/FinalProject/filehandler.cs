@@ -4,63 +4,85 @@ using System.Text;
 
 class FileHandler
 {
-    // Save data to a file
+    // Saves data to a file
     public void SaveToFile(string filename, string data)
     {
         try
         {
-            // Combine the filename with the current directory to get the full path
+            // Combines the filename with the current directory to get the full path
             string filePath = Path.Combine(Environment.CurrentDirectory, filename);
 
-            // Write the data to the file using UTF-8 encoding
+            // Writes the data to the file using UTF-8 encoding
             File.WriteAllText(filePath, data, Encoding.UTF8);
 
-            // Display a success message
+            // Displays a success message
             Console.WriteLine($"Data saved to file: {filePath}");
         }
         catch (Exception ex)
         {
-            // Handle exceptions and display an error message
+            // Handles exceptions and display an error message
             Console.WriteLine($"Error saving to file: {ex.Message}");
         }
     }
 
-    // Load data from a file
+    // Loads data from a file
     public string LoadFromFile(string filename)
     {
         try
         {
-            // Combine the filename with the current directory to get the full path
+            // Combines the filename with the current directory to get the full path
             string filePath = Path.Combine(Environment.CurrentDirectory, filename);
 
-            // Check if the file exists
+            // Checks if the file exists
             if (File.Exists(filePath))
             {
-                // Read the data from the file using UTF-8 encoding
+                // Reads the data from the file using UTF-8 encoding
                 string data = File.ReadAllText(filePath, Encoding.UTF8);
 
-                // Display a success message
+                // Displays a success message
                 Console.WriteLine($"Data loaded from file: {filePath}");
 
-                // Return the loaded data
+                // Returns the loaded data
                 return data;
             }
             else
             {
-                // Display a message if the file is not found
+                // Displays a message if the file is not found
                 Console.WriteLine($"File not found: {filePath}");
 
-                // Return an empty string
+                // Returns an empty string
                 return string.Empty;
             }
         }
         catch (Exception ex)
         {
-            // Handle exceptions and display an error message
+            // Handles exceptions and display an error message
             Console.WriteLine($"Error loading from file: {ex.Message}");
 
-            // Return an empty string
+            // Returns an empty string
             return string.Empty;
         }
     }
 }
+
+
+
+
+
+
+
+
+
+// Principle: Abstraction
+// This class represents FileHandler, which handles file operations for the wine cellar management system.
+// It abstracts the details of file handling, providing a centralized way to save and load data.
+
+// Principle: Encapsulation
+// All member variables are private, and public methods are defined for necessary behaviors.
+// Encapsulation ensures that the internal details of file handling are hidden from external classes.
+
+// Principle: Inheritance
+// No explicit inheritance is needed in this class, as it focuses on file handling without shared behaviors.
+
+// Principle: Polymorphism
+// No explicit polymorphism is required in this class, as it primarily focuses on file handling.

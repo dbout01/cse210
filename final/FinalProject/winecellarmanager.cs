@@ -13,7 +13,7 @@ class WineCellarManager
     // Main program logic
     public void RunProgram()
     {
-        // Load initial wines from the catalog
+        // Loads initial wines from the catalog
         List<Wine> catalogWines = wineCatalog.GetCatalog();
         wineCellar = new WineCellar();
         wineCellar.AddWines(catalogWines);
@@ -23,11 +23,11 @@ class WineCellarManager
         // Main program loop
         do
         {
-            // Display the main menu and get user input
+            // Displays the main menu and get user input
             userInterface.DisplayMenu();
             string userInput = userInterface.GetUserInput();
 
-            // Process user input based on the chosen menu option
+            // Processes user input based on the chosen menu option
             switch (userInput)
             {
                 case "1":
@@ -96,3 +96,25 @@ class WineCellarManager
         Console.WriteLine($"Newest Wine: {newestWine?.Name}, Year: {newestWine?.Year}");
     }
 }
+
+
+
+
+
+
+
+
+
+// Principle: Abstraction
+// This class represents WineCellarManager, the main program manager for the wine cellar management system.
+// It abstracts the details of program flow, providing a structured way to manage the wine cellar system.
+
+// Principle: Encapsulation
+// All member variables are private, and public methods are defined for necessary behaviors.
+// Encapsulation ensures that the internal details of program management are hidden from external classes.
+
+// Principle: Inheritance
+// No explicit inheritance is needed in this class, as it focuses on program management without shared behaviors.
+
+// Principle: Polymorphism
+// No explicit polymorphism is required in this class, as it primarily focuses on program management.

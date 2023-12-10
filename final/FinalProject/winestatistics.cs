@@ -12,43 +12,65 @@ class WineStatistics
         this.wines = wines;
     }
 
-    // Calculate the average price of all wines
+    // Calculates the average price of all wines
     public double CalculateAveragePrice()
     {
-        // Check if there are wines in the list
+        // Checks if there are wines in the list
         if (wines.Count == 0)
         {
             return 0; // Return 0 if there are no wines
         }
 
-        // Use LINQ to calculate the average price
+        // Uses LINQ to calculate the average price
         double totalPrices = wines.Sum(wine => (double)wine.Price);
         return totalPrices / wines.Count;
     }
 
-    // Find the oldest wine in the list
+    // Finds the oldest wine in the list
     public Wine FindOldestWine()
     {
-        // Check if there are wines in the list
+        // Checks if there are wines in the list
         if (wines.Count == 0)
         {
             return null; // Return null if there are no wines
         }
 
-        // Use LINQ to find the wine with the earliest year
+        // Uses LINQ to find the wine with the earliest year
         return wines.OrderBy(wine => wine.Year).First();
     }
 
-    // Find the newest wine in the list
+    // Finds the newest wine in the list
     public Wine FindNewestWine()
     {
-        // Check if there are wines in the list
+        // Checks if there are wines in the list
         if (wines.Count == 0)
         {
             return null; // Return null if there are no wines
         }
 
-        // Use LINQ to find the wine with the latest year
+        // Uses LINQ to find the wine with the latest year
         return wines.OrderByDescending(wine => wine.Year).First();
     }
 }
+
+
+
+
+
+
+
+
+
+// Principle: Abstraction
+// This class represents WineStatistics, which calculates statistics about a collection of wines.
+// It abstracts the logic for calculating average price, finding the oldest and newest wines.
+
+// Principle: Encapsulation
+// All member variables are private, and public methods are defined for necessary behaviors.
+// Encapsulation ensures that the internal details of the wine statistics calculation are hidden from external classes.
+
+// Principle: Inheritance
+// No explicit inheritance is needed in this class, as it focuses on statistical calculations without shared behaviors.
+
+// Principle: Polymorphism
+// No explicit polymorphism is required in this class, as it primarily focuses on statistical calculations.
