@@ -6,7 +6,7 @@ class Wine
     // Properties to store information about the wine
     public string Name { get; set; }       // Name of the wine
     public int Year { get; set; }          // Year the wine was produced
-    public string Type { get; set; }       // Type of wine (e.g., Red, White)
+    public string Type { get; set; }       // Type of wine (Red, White)
     public string Region { get; set; }     // Region where the wine is produced
     public decimal Price { get; set; }     // Price of the wine
     public int Quantity { get; set; }      // Quantity of bottles in the cellar
